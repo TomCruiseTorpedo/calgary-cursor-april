@@ -1,0 +1,29 @@
+{
+  "feeds": [
+    {
+      "url": "https://github.blog/feed/",
+      "sourceType": "vendor_blog",
+      "label": "GitHub Blog"
+    },
+    {
+      "url": "https://dev.to/feed/tag/ai",
+      "sourceType": "community",
+      "label": "DEV Community #ai"
+    },
+    {
+      "url": "https://hnrss.org/newest?count=40",
+      "sourceType": "community",
+      "label": "Hacker News (newest)"
+    },
+    {
+      "url": "https://blog.google/technology/ai/rss/",
+      "sourceType": "news",
+      "label": "Google AI blog"
+    },
+    {
+      "url": "https://openai.com/blog/rss.xml",
+      "sourceType": "vendor_blog",
+      "label": "OpenAI Blog"
+    }
+  ]
+}
