@@ -5,12 +5,13 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
 });
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: "300",
   variable: "--font-display-serif",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
