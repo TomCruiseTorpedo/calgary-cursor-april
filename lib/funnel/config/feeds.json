@@ -21,9 +21,54 @@
       "label": "Google AI blog"
     },
     {
+      "url": "https://deepmind.google/blog/rss.xml",
+      "sourceType": "news",
+      "label": "Google DeepMind blog"
+    },
+    {
       "url": "https://openai.com/blog/rss.xml",
       "sourceType": "vendor_blog",
       "label": "OpenAI Blog"
+    },
+    {
+      "url": "https://huggingface.co/blog/feed.xml",
+      "sourceType": "vendor_blog",
+      "label": "Hugging Face Blog"
+    },
+    {
+      "url": "https://blogs.nvidia.com/feed/",
+      "sourceType": "vendor_blog",
+      "label": "NVIDIA Blog"
+    },
+    {
+      "url": "https://ollama.com/blog/rss.xml",
+      "sourceType": "vendor_blog",
+      "label": "Ollama Blog"
+    },
+    {
+      "url": "https://openrouter.ai/rss.xml",
+      "sourceType": "vendor_blog",
+      "label": "OpenRouter"
+    },
+    {
+      "url": "https://blogs.microsoft.com/ai/feed/",
+      "sourceType": "vendor_blog",
+      "label": "Microsoft AI Blog"
+    },
+    {
+      "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "sourceType": "vendor_blog",
+      "label": "AWS Machine Learning Blog"
+    },
+    {
+      "url": "https://blog.cloudflare.com/rss/",
+      "sourceType": "vendor_blog",
+      "label": "Cloudflare Blog"
+    },
+    {
+      "url": "https://blog.langchain.dev/rss/",
+      "sourceType": "vendor_blog",
+      "label": "LangChain Blog"
     }
   ]
 }

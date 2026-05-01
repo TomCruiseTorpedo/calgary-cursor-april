@@ -11,7 +11,7 @@ import type {
   DevPersona,
   ScoredTool,
 } from "@/lib/funnel/types";
-import { DEV_PERSONAS } from "@/lib/funnel/types";
+import { DEV_PERSONA_GROUPS } from "@/lib/funnel/types";
 
 type EnrichResponse = {
   summary: string;
@@ -22,9 +22,15 @@ type EnrichResponse = {
 const personaLabel: Record<DevPersona, string> = {
   frontend: "Frontend",
   backend: "Backend",
-  devops: "DevOps",
+  mobile: "Mobile",
+  devops: "DevOps / SRE",
   cloud: "Cloud",
-  fullstack: "Full-stack",
+  security: "Security / AppSec",
+  qa_test: "QA & test automation",
+  data_ml: "Data & ML engineering",
+  product: "Product / PM",
+  design_ux: "Design & UX",
+  fullstack: "Full-stack (generalist)",
 };
 
 const cardShadow = "shadow-[0_4px_16px_rgba(0,0,0,0.04)]";
@@ -33,9 +39,10 @@ const TOP_LIMIT = "7";
 
 function feedSourceLabel(src: AggregateFeedSource, rssIngest: boolean): string {
   if (!rssIngest) return "Curated digest (offline)";
-  if (src === "live") return "Live RSS + digest filler";
-  if (src === "mixed") return "Partial live RSS + digest";
-  return "Curated digest (RSS feeds unavailable)";
+  if (src === "live")
+    return "Live: RSS + HN Algolia + GitHub Atom (+ digest filler)";
+  if (src === "mixed") return "Partial live stream (RSS / HN / GitHub) + digest";
+  return "Curated digest (live sources unavailable)";
 }
 
 export function FunnelApp({
@@ -143,7 +150,7 @@ export function FunnelApp({
           </div>
           <p className="max-w-2xl text-[15px] leading-relaxed tracking-[0.01em] text-body">
             We merge an <strong className="font-medium text-body-strong">aggregate feed</strong> of
-            public sources (live RSS when enabled, otherwise a curated digest) and run a
+            public sources (RSS, HN Algolia, GitHub Atom when enabled; otherwise a curated digest) and run a
             transparent <strong className="font-medium text-body-strong">sifter</strong> on a
             catalog: role fit, recency, adoption, cross-source “buzz,” and maintainer health.
             Pick your profile, run the funnel, then open a tool for evidence + adoption steps.
@@ -154,14 +161,18 @@ export function FunnelApp({
           <label className="flex flex-col gap-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">
             Your dev profile
             <select
-              className="h-11 min-w-[12rem] rounded-md border border-hairline-strong bg-surface-card px-4 text-[15px] font-medium text-ink focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
+              className="h-11 min-w-[min(100%,14rem)] max-w-full rounded-md border border-hairline-strong bg-surface-card px-4 text-[15px] font-medium text-ink focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
               value={persona}
               onChange={(e) => setPersona(e.target.value as DevPersona)}
             >
-              {DEV_PERSONAS.map((p) => (
-                <option key={p} value={p}>
-                  {personaLabel[p]}
-                </option>
+              {DEV_PERSONA_GROUPS.map((group) => (
+                <optgroup key={group.label} label={group.label}>
+                  {group.personas.map((p) => (
+                    <option key={p} value={p}>
+                      {personaLabel[p]}
+                    </option>
+                  ))}
+                </optgroup>
               ))}
             </select>
           </label>

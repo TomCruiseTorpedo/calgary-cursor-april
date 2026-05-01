@@ -1,0 +1,26 @@
+{
+  "releaseRepos": [
+    { "owner": "vercel", "repo": "ai", "label": "vercel/ai releases" },
+    { "owner": "langchain-ai", "repo": "langgraph", "label": "langgraph releases" },
+    { "owner": "langchain-ai", "repo": "langchain", "label": "langchain releases" },
+    { "owner": "ollama", "repo": "ollama", "label": "ollama releases" },
+    { "owner": "openai", "repo": "openai-python", "label": "openai-python releases" },
+    { "owner": "anthropics", "repo": "anthropic-sdk-python", "label": "anthropic-sdk-python" },
+    { "owner": "anthropics", "repo": "anthropic-sdk-typescript", "label": "anthropic-sdk-ts" },
+    { "owner": "huggingface", "repo": "transformers", "label": "transformers releases" },
+    { "owner": "run-llama", "repo": "llama_index", "label": "llama_index releases" },
+    { "owner": "microsoft", "repo": "semantic-kernel", "label": "semantic-kernel releases" },
+    { "owner": "continuedev", "repo": "continue", "label": "continue releases" },
+    { "owner": "BerriAI", "repo": "litellm", "label": "litellm releases" },
+    { "owner": "tailwindlabs", "repo": "tailwindcss", "label": "tailwindcss releases" },
+    { "owner": "facebook", "repo": "react", "label": "react releases" },
+    { "owner": "cloudflare", "repo": "workers-sdk", "label": "workers-sdk releases" }
+  ],
+  "publicUsers": [
+    { "login": "karpathy", "label": "karpathy (activity)" },
+    { "login": "garrytan", "label": "garrytan (activity)" },
+    { "login": "steipete", "label": "steipete (activity)" },
+    { "login": "steveyegge", "label": "steveyegge (activity)" },
+    { "login": "mattpocock", "label": "mattpocock (activity)" }
+  ]
+}

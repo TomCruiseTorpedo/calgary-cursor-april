@@ -2,16 +2,54 @@
 export type DevPersona =
   | "frontend"
   | "backend"
+  | "mobile"
   | "devops"
   | "cloud"
+  | "security"
+  | "qa_test"
+  | "data_ml"
+  | "product"
+  | "design_ux"
   | "fullstack";
 
+/** Flat list (API + validation); UI groups below */
 export const DEV_PERSONAS: DevPersona[] = [
   "frontend",
   "backend",
+  "mobile",
   "devops",
   "cloud",
+  "security",
+  "qa_test",
+  "data_ml",
+  "product",
+  "design_ux",
   "fullstack",
+];
+
+/** Optgroup-friendly clusters for the profile picker */
+export const DEV_PERSONA_GROUPS: { label: string; personas: DevPersona[] }[] = [
+  {
+    label: "Engineering",
+    personas: [
+      "frontend",
+      "backend",
+      "mobile",
+      "devops",
+      "cloud",
+      "security",
+      "qa_test",
+      "data_ml",
+    ],
+  },
+  {
+    label: "Product & design",
+    personas: ["product", "design_ux"],
+  },
+  {
+    label: "Generalist",
+    personas: ["fullstack"],
+  },
 ];
 
 export type EvidenceKind =

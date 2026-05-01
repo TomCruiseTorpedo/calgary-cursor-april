@@ -1,4 +1,7 @@
 import type { DevPersona, FunnelScore, FunnelSubscores, ToolCandidate } from "./types";
+import { DEV_PERSONAS } from "./types";
+
+const VALID_PERSONA = new Set<string>(DEV_PERSONAS);
 
 /** Weighted rubric (sums to 1) — transparent on purpose */
 const W = {
@@ -17,6 +20,7 @@ const PERSONA_KEYWORDS: Record<Exclude<DevPersona, "fullstack">, string[]> = {
     "css",
     "ui",
     "tsx",
+    "typescript",
     "browser",
     "tailwind",
     "next",
@@ -35,6 +39,18 @@ const PERSONA_KEYWORDS: Record<Exclude<DevPersona, "fullstack">, string[]> = {
     "server",
     "sql",
     "redis",
+    "dotnet",
+  ],
+  mobile: [
+    "ios",
+    "android",
+    "swift",
+    "kotlin",
+    "react-native",
+    "flutter",
+    "mobile",
+    "expo",
+    "dart",
   ],
   devops: [
     "docker",
@@ -59,6 +75,67 @@ const PERSONA_KEYWORDS: Record<Exclude<DevPersona, "fullstack">, string[]> = {
     "k8s",
     "eks",
   ],
+  security: [
+    "security",
+    "auth",
+    "oauth",
+    "vault",
+    "secrets",
+    "appsec",
+    "owasp",
+    "encryption",
+    "compliance",
+    "sso",
+  ],
+  qa_test: [
+    "test",
+    "qa",
+    "e2e",
+    "playwright",
+    "cypress",
+    "jest",
+    "pytest",
+    "selenium",
+    "quality",
+    "coverage",
+  ],
+  data_ml: [
+    "python",
+    "pytorch",
+    "tensorflow",
+    "ml",
+    "data",
+    "notebook",
+    "pandas",
+    "gpu",
+    "training",
+    "inference",
+    "cuda",
+  ],
+  product: [
+    "roadmap",
+    "analytics",
+    "docs",
+    "collaboration",
+    "feedback",
+    "workflow",
+    "productivity",
+    "planning",
+    "spec",
+    "stakeholder",
+  ],
+  design_ux: [
+    "figma",
+    "design",
+    "ux",
+    "prototype",
+    "accessibility",
+    "research",
+    "ui",
+    "css",
+    "component",
+    "tailwind",
+  ],
 };
 
 const ALL_KEYWORDS = new Set<string>(
@@ -66,16 +143,12 @@ const ALL_KEYWORDS = new Set<string>(
 );
 
 function normalizePersona(p: string): DevPersona {
-  const lower = p.toLowerCase();
-  if (
-    lower === "frontend" ||
-    lower === "backend" ||
-    lower === "devops" ||
-    lower === "cloud" ||
-    lower === "fullstack"
-  ) {
-    return lower;
-  }
+  const lower = p.toLowerCase().trim().replace(/-/g, "_");
+  if (lower === "data-ml" || lower === "dataml") return "data_ml";
+  if (lower === "qa" || lower === "quality") return "qa_test";
+  if (lower === "pm" || lower === "product_manager") return "product";
+  if (lower === "ux" || lower === "design") return "design_ux";
+  if (VALID_PERSONA.has(lower)) return lower as DevPersona;
   return "fullstack";
 }
 

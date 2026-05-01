@@ -1,25 +1,44 @@
 {
   "byToolId": {
-    "cursor": ["cursor ide", "cursor.com", "anysphere"],
+    "cursor": [
+      "cursor ide",
+      "cursor.com",
+      "anysphere",
+      "cursor editor"
+    ],
     "continue": ["continue.dev", "continuedev", "continue dev"],
-    "vercel-ai-sdk": ["vercel ai sdk", "sdk.vercel.ai", "@ai-sdk", "ai sdk"],
-    "langgraph": ["langgraph"],
+    "vercel-ai-sdk": [
+      "vercel ai sdk",
+      "sdk.vercel.ai",
+      "@ai-sdk",
+      "ai sdk",
+      "vercel ai"
+    ],
+    "langgraph": ["langgraph", "lang graph"],
     "ollama": ["ollama", "ollama.com"],
-    "litellm": ["litellm"],
+    "litellm": ["litellm", "lite llm"],
     "temporal": ["temporal.io", "temporal workflow"],
     "dagger": ["dagger.io", "dagger ci"],
     "pulumi": ["pulumi"],
     "modal": ["modal.com", "modal labs"],
-    "braintrust": ["braintrust"],
+    "braintrust": ["braintrust", "brain trust eval"],
     "openrouter": ["openrouter", "openrouter.ai"],
     "crewai": ["crewai", "crew ai"],
-    "semantic-kernel": ["semantic kernel"],
+    "semantic-kernel": ["semantic kernel", "semantic-kernel"],
     "cohere-toolkit": ["cohere toolkit", "cohere-ai"],
-    "ray-serve-llm": ["ray serve", "ray.io"],
-    "hf-transformers": ["hugging face", "transformers library", "huggingface transformers"],
+    "ray-serve-llm": ["ray serve", "ray.io", "ray serve llm"],
+    "hf-transformers": [
+      "hugging face",
+      "transformers library",
+      "huggingface transformers",
+      "huggingface"
+    ],
     "chromadb": ["chroma", "chromadb", "trychroma"],
     "milvus": ["milvus", "zilliz"],
-    "playwright-mcp": ["playwright mcp", "playwright-mcp"],
-    "anthropic-sdk": ["anthropic", "claude 3", "claude api"]
+    "playwright-mcp": ["playwright mcp", "playwright-mcp", "playwright"],
+    "anthropic-sdk": ["anthropic", "claude 3", "claude api"],
+    "expo-ai": ["expo.dev", "expo ", "react native expo"],
+    "linear-ai": ["linear.app", "linear ", "linear issue"],
+    "figma-ai": ["figma", "figma ai", "figjam"]
   }
 }
